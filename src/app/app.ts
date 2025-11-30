@@ -6,7 +6,7 @@ import { ProductList } from './components/product-list/product-list';
   selector: 'app-root',
   imports: [ProductList],
   template: `<main style="
-      max-width: 1200px;
+      /* max-width: 1200px; */
       margin: 0 auto;
       padding: 20px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
