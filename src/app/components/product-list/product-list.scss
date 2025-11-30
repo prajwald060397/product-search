@@ -1,0 +1,81 @@
+.search-area {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: white;
+
+    &:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &[type="number"] {
+      flex: 0 1 150px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    input {
+    //   min-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+}
+
+.list {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  .loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    
+    &::after {
+      content: '...';
+      animation: dots 1.5s steps(4, end) infinite;
+    }
+  }
+
+  > div:last-child {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 16px;
+  }
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}

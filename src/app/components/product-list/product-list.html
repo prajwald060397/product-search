@@ -1,0 +1,12 @@
+<div class="search-area">
+  <form [formGroup]="form" (ngSubmit)="$event.preventDefault()">
+    <input formControlName="q" placeholder="Search products..." />
+  </form>
+</div>
+
+<div class="list" (scroll)="onScroll()" style="height:60vh; overflow:auto; border:1px solid #ddd; padding:8px;">
+  <app-product-item *ngFor="let p of products()" [product]="p" (save)="onSaveEdit($event)"></app-product-item>
+
+  <div *ngIf="loading()" class="loading">Loading...</div>
+  <div *ngIf="!loading() && products().length === 0">No products</div>
+</div>

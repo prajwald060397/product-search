@@ -1,0 +1,20 @@
+<div class="product-item">
+    <img *ngIf="product.thumbnail" [src]="product.thumbnail" class="thumb" />
+    <div class="info">
+        <ng-container *ngIf="!editing()">
+            <h3>{{product.title}}</h3>
+            <p>{{product.description}}</p>
+            <p>₹ {{product.price}}</p>
+            <button (click)="startEdit()">Edit</button>
+        </ng-container>
+
+        <ng-container *ngIf="editing()">
+            <form [formGroup]="form" (ngSubmit)="onSave()">
+                <input formControlName="title" />
+                <input formControlName="price" type="number" />
+                <button type="submit">Save</button>
+                <button type="button" (click)="cancel()">Cancel</button>
+            </form>
+        </ng-container>
+    </div>
+</div>
